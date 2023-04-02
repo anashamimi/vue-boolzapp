@@ -24,46 +24,78 @@
     <div class="bg-success"></div>
 
 
-    <div class="ah-container d-flex">
+    <div class="ah-container d-flex shadow">
+        <!-- Chat -->
         <div class="chats">
             <div class="user d-flex justify-content-between">
                 <div class="d-flex align-items-center gap-2">
-                    <img class="rounded-circle" src="./img/avatar_1.jpg" alt="">
+                    <img src="./img/avatar_1.jpg" alt="">
                     <span>Anas</span>
                 </div>
-                <div class="d-flex gap-3 align-items-center">
+                <div class="d-flex align-items-center">
                     <i class="fa-solid fa-circle-notch"></i>
                     <i class="fa-solid fa-message"></i>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
+            </div>
+            <div class="notification d-flex p-3 gap-2">
+                <div class="bg-white rounded-circle">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div>
+                    <p class="small ">Ricevi notifiche di nuovi messaggi</p>
+                    <p class="ah-small text-decoration-underline text-secondary">Attiva notifiche desktop</p>
+                </div>
+            </div>
+            <div class="search d-flex">
+                <input type="text" class="form-control-sm m-1 w-100" id="userSearch" name="userSearch"
+                    placeholder="Cerca o inizia una nuova chat">
+            </div>
+
+            <div class="friend p-2 d-flex justify-content-between">
+
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <img src="./img/avatar_1.jpg" alt="">
+                    <div>
+                        <span class="fw-medium">Anas</span>
+                        <p class="ah-small text-secondary">Ultimo messaggio</p>
+                    </div>
+
+                </div>
+                <span>Ieri</span>
 
             </div>
+
+
         </div>
+
+        <!-- Message -->
         <div class="message">
             <div class="user d-flex justify-content-between">
                 <div class="d-flex gap-2 align-items-center">
                     <div>
-                        <img class="rounded-circle" src="./img/avatar_1.jpg" alt="">
+                        <img src="./img/avatar_1.jpg" alt="">
                     </div>
-                    
+
                     <div>
                         <span>Anas</span>
                         <p class="ah-small text-secondary">Ultimo accesso oggi alle 12.00</p>
                     </div>
                 </div>
 
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-paperclip"></i>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
-            <div class="message-area">
-                
+            <div class="message-area p-5">
+
             </div>
             <div class="write-message d-flex align-items-center justify-content-between px-3">
                 <i class="fa-regular fa-face-smile"></i>
-                <input type="text" class="form-control mx-4" id="userMessage" name="userMessage" placeholder="Scrivi un messaggio">
+                <input type="text" class="form-control mx-4" id="userMessage" name="userMessage"
+                    placeholder="Scrivi un messaggio">
                 <i class="fa-solid fa-microphone"></i>
             </div>
         </div>
