@@ -115,7 +115,7 @@ createApp({
                 {
                     id: 6,
                     name: 'Claudia',
-                    avatar: './img/avatar_5.jpg',
+                    avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
@@ -178,6 +178,7 @@ createApp({
                 }
             ],
             selectContactindex: 0,
+            newMessage: '',
         }
     },
 
@@ -185,5 +186,13 @@ createApp({
         selectContact(index) {
             this.selectContactindex = index;
         },
+
+        addMessage(){
+            newMessages = {
+                date: '10/01/2020 15:50:00',
+                name: this.newMessage,
+                status: 'sent'
+            }
+        }
     }
 }).mount('#app')
