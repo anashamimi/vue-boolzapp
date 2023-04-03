@@ -29,7 +29,7 @@
             <div class="chats">
                 <div class="user d-flex justify-content-between">
                     <div class="d-flex align-items-center gap-2">
-                        <img src="./img/avatar_1.jpg" alt="">
+                        <img src="./img/avatar_io.jpg" alt="">
                         <span>Anas</span>
                     </div>
                     <div class="d-flex align-items-center">
@@ -97,13 +97,17 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                   </div>
                 </div>
-                <div class="message-area p-5">
-                  <!-- visualizza i messaggi del contatto selezionato -->
+                <div class="message-area p-5" >
+                  <div class="sent p-1 mb-2 rounded-2 d-flex align-items-baseline gap-3" v-for="(element, index) in contacts">
+                    <p>{{element.messages.message}}</p>
+                    <span class="ah-small">12.45</span>
+                  </div>                  
+
                 </div>
                 <div class="write-message d-flex align-items-center justify-content-between px-3">
                   <i class="fa-regular fa-face-smile"></i>
                   <input type="text" class="form-control mx-4" id="userMessage" name="userMessage"
-                         placeholder="Scrivi un messaggio">
+                         placeholder="Scrivi un messaggio" v-model="newMeesage" @keyup.enter="addMessage">
                   <i class="fa-solid fa-microphone"></i>
                 </div>
               </div>
