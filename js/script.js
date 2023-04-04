@@ -190,7 +190,19 @@ createApp({
                 status: 'sent'
             };
             this.contacts[this.selectContact].messages.push(newMessage);
-            
+            this.messageText = '';
+
+            const responseMessage = {
+                date: '10/01/2020 15:50:00',
+                message: 'Ok',
+                status: 'received'
+            };
+            setTimeout(() => {
+                this.contacts[this.selectContact].messages.push(responseMessage);                
+            }, 1000)
+        },
+
+        rndMessage(){
 
         },
     }
