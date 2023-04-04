@@ -176,6 +176,7 @@ createApp({
                     ],
                 }
             ],
+            rndMessages: ['Si','No','Ok','Forse','Non lo so','Ahahahhah','Per me è meglio di no'],
             selectContact: 0,
             messageText: '',
         }
@@ -193,9 +194,11 @@ createApp({
 
             const responseMessage = {
                 date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
-                message: 'Ok',
+                message: this.rndMessages[getRndNumber(0, this.rndMessages.length)] ,
                 status: 'received'
+                
             };
+
             setTimeout(() => {
                 this.contacts[this.selectContact].messages.push(responseMessage);                
             }, 1000)
