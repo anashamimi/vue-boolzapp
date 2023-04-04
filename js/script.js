@@ -1,5 +1,4 @@
-// const dt = luxon.DateTime;
-// oggi: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+const dt = luxon.DateTime;
 
 const { createApp } = Vue;
 
@@ -185,7 +184,7 @@ createApp({
     methods: {
         addMessage(){
             const newMessage = {
-                date: '10/01/2020 15:50:00',
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: this.messageText,
                 status: 'sent'
             };
@@ -193,7 +192,7 @@ createApp({
             this.messageText = '';
 
             const responseMessage = {
-                date: '10/01/2020 15:50:00',
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'Ok',
                 status: 'received'
             };

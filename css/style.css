@@ -167,6 +167,12 @@ i {
     max-width: 75%;
 }
 
+.message-date{
+    display: flex;
+    justify-content: end;
+    margin-left: 40px;
+}
+
 /* meda query */
 
 @media (max-width: 1055px) {
