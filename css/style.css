@@ -150,12 +150,13 @@ i {
     background-color: #d8fbd2;
     width: fit-content;
     margin-left: auto;
-    
+    max-width: 75%;
 }
 
 .received {
     background-color: #fdfdfd;
     width: fit-content;
+    max-width: 75%;
 }
 
 /* meda query */

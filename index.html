@@ -1,19 +1,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./css/style.css">
 
-    <title>esercizio</title>
+  <title>esercizio</title>
 </head>
 
 
@@ -21,103 +22,101 @@
 <body>
 
 
-    <div class="bg-success"></div>
+  <div class="bg-success"></div>
 
-    <div id="app">
-        <div class="ah-container d-flex shadow">
-            <!-- Chat -->
-            <div class="chats">
-                <div class="user d-flex justify-content-between">
-                    <div class="d-flex align-items-center gap-2">
-                        <img src="./img/avatar_io.jpg" alt="">
-                        <span>Anas</span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                </div>
-                <div class="notification d-flex p-3 gap-2">
-                    <div class="bg-white rounded-circle">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-                    <div>
-                        <p class="small ">Ricevi notifiche di nuovi messaggi</p>
-                        <p class="ah-small text-decoration-underline text-secondary">Attiva notifiche desktop</p>
-                    </div>
-                </div>
-                <div class="search d-flex">
-                    <input type="text" class="form-control-sm m-1 w-100" id="userSearch" name="userSearch"
-                        placeholder="Cerca o inizia una nuova chat">
-                </div>
+  <div id="app">
+    <div class="ah-container d-flex shadow">
+      <!-- Chat -->
+      <div class="chats">
+        <div class="user d-flex justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="./img/avatar_io.jpg" alt="">
+            <span>Anas</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+        <div class="notification d-flex p-3 gap-2">
+          <div class="bg-white rounded-circle">
+            <i class="fa-solid fa-bell-slash"></i>
+          </div>
+          <div>
+            <p class="small ">Ricevi notifiche di nuovi messaggi</p>
+            <p class="ah-small text-decoration-underline text-secondary">Attiva notifiche desktop</p>
+          </div>
+        </div>
+        <div class="search d-flex">
+          <input type="text" class="form-control-sm m-1 w-100" id="userSearch" name="userSearch"
+            placeholder="Cerca o inizia una nuova chat">
+        </div>
 
-                <div class="chat-friends">
-                    <div div class="friend p-2 d-flex justify-content-between"
-                    v-for="(contact, index) in contacts"
-                    :key="contact.id"
-                    @click="selectContact(index)">
+        <div class="chat-friends">
+          <div div class="friend p-2 d-flex justify-content-between" v-for="(contact, index) in contacts"
+            :key="contact.id" @click="selectContact(index)">
 
-                        <div class="d-flex justify-content-center align-items-center gap-2">
-                            <img :src="contact.avatar" :alt="contact.name">
-                            <div>
-                                <span class="fw-medium">{{contact.name}}</span>
-                                <p class="ah-small text-secondary">Ultimo messaggio</p>
-                            </div>
-
-                        </div>
-                        <span class="ah-small text-secondary">Ieri</span>
-
-                    </div>
-                </div>
-
-
-
+            <div class="d-flex justify-content-center align-items-center gap-2">
+              <img :src="contact.avatar" :alt="contact.name">
+              <div>
+                <span class="fw-medium">{{contact.name}}</span>
+                <p class="ah-small text-secondary">Ultimo messaggio</p>
+              </div>
 
             </div>
+            <span class="ah-small text-secondary">Ieri</span>
 
-            <!-- Message -->
-            <div class="message">
-                <div class="user d-flex justify-content-between">
-                  <div class="d-flex gap-2 align-items-center">
-                    <div>
-                      <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                    <div>
-                      <img :src="contacts[selectContactindex].avatar" alt="">
-                    </div>
-                    <div>
-                      <span>{{contacts[selectContactindex].name}}</span>
-                      <p class="ah-small text-secondary">Ultimo accesso oggi alle 12.00</p>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-solid fa-paperclip"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </div>
-                </div>
-                <div class="message-area p-5" >
-                  <div class="sent p-1 mb-2 rounded-2 d-flex align-items-baseline gap-3" v-for="(element, index) in contacts">
-                    <p>{{element.messages.message}}</p>
-                    <span class="ah-small">12.45</span>
-                  </div>                  
-
-                </div>
-                <div class="write-message d-flex align-items-center justify-content-between px-3">
-                  <i class="fa-regular fa-face-smile"></i>
-                  <input type="text" class="form-control mx-4" id="userMessage" name="userMessage"
-                         placeholder="Scrivi un messaggio" v-model="newMeesage" @keyup.enter="addMessage">
-                  <i class="fa-solid fa-microphone"></i>
-                </div>
-              </div>
-              
+          </div>
         </div>
-    </div>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
-    <script type="text/javascript" src="./js/utility.js"></script>
+
+
+
+      </div>
+
+      <!-- Message -->
+      <div class="message">
+        <div class="user d-flex justify-content-between">
+          <div class="d-flex gap-2 align-items-center">
+            <div>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div>
+              <img :src="contacts[selectContactindex].avatar" alt="">
+            </div>
+            <div>
+              <span>{{contacts[selectContactindex].name}}</span>
+              <p class="ah-small text-secondary">Ultimo accesso oggi alle 12.00</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+        <div class="message-area p-5">
+          <div class="p-1 mb-2 rounded-2 d-flex align-items-baseline gap-3"
+            v-for="(element, index) in contacts[selectContactindex].messages" :class="element.status">
+            <p>{{element.message}}</p>
+            <span class="ah-small">12.45</span>
+          </div>
+
+        </div>
+        <div class="write-message d-flex align-items-center justify-content-between px-3">
+          <i class="fa-regular fa-face-smile"></i>
+          <input type="text" class="form-control mx-4" id="userMessage" name="userMessage"
+            placeholder="Scrivi un messaggio" v-model="newMeesage" @keyup.enter="addMessage">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
 </body>
 
 </html>

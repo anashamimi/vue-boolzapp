@@ -1,7 +1,7 @@
 // const dt = luxon.DateTime;
 // oggi: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
 
-const { createApp } = Vue
+const { createApp } = Vue;
 
 createApp({
     data() {
@@ -195,4 +195,4 @@ createApp({
             }
         }
     }
-}).mount('#app')
+}).mount('#app');
