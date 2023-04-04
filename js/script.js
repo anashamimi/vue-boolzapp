@@ -177,22 +177,21 @@ createApp({
                     ],
                 }
             ],
-            selectContactindex: 0,
-            newMessage: '',
+            selectContact: 0,
+            messageText: '',
         }
     },
 
     methods: {
-        selectContact(index) {
-            this.selectContactindex = index;
-        },
-
         addMessage(){
-            newMessages = {
+            const newMessage = {
                 date: '10/01/2020 15:50:00',
-                name: this.newMessage,
+                message: this.messageText,
                 status: 'sent'
-            }
-        }
+            };
+            this.contacts[this.selectContact].messages.push(newMessage);
+            
+
+        },
     }
 }).mount('#app');

@@ -55,7 +55,7 @@
 
         <div class="chat-friends">
           <div div class="friend p-2 d-flex justify-content-between" v-for="(contact, index) in contacts"
-            :key="contact.id" @click="selectContact(index)">
+            :key="contact.id" @click="selectContact = index" :class="{'selected': index === selectContact}">
 
             <div class="d-flex justify-content-center align-items-center gap-2">
               <img :src="contact.avatar" :alt="contact.name">
@@ -83,10 +83,10 @@
               <i class="fa-solid fa-arrow-left"></i>
             </div>
             <div>
-              <img :src="contacts[selectContactindex].avatar" alt="">
+              <img :src="contacts[selectContact].avatar" alt="">
             </div>
             <div>
-              <span>{{contacts[selectContactindex].name}}</span>
+              <span>{{contacts[selectContact].name}}</span>
               <p class="ah-small text-secondary">Ultimo accesso oggi alle 12.00</p>
             </div>
           </div>
@@ -97,17 +97,17 @@
           </div>
         </div>
         <div class="message-area p-5">
-          <div class="p-1 mb-2 rounded-2 d-flex align-items-baseline gap-3"
-            v-for="(element, index) in contacts[selectContactindex].messages" :class="element.status">
+          <div class="p-1 mb-2 rounded-2 d-flex gap-3"
+            v-for="(element, index) in contacts[selectContact].messages" :class="element.status">
             <p>{{element.message}}</p>
-            <span class="ah-small">12.45</span>
+            <span class="ah-small mt-4">12.45</span>
           </div>
 
         </div>
         <div class="write-message d-flex align-items-center justify-content-between px-3">
           <i class="fa-regular fa-face-smile"></i>
           <input type="text" class="form-control mx-4" id="userMessage" name="userMessage"
-            placeholder="Scrivi un messaggio" v-model="newMeesage" @keyup.enter="addMessage">
+            placeholder="Scrivi un messaggio" v-model="messageText" @keyup.enter="addMessage">
           <i class="fa-solid fa-microphone"></i>
         </div>
       </div>
