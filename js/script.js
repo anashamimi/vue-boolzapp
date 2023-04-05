@@ -1,3 +1,5 @@
+
+
 const dt = luxon.DateTime;
 
 const { createApp } = Vue;
@@ -179,6 +181,7 @@ createApp({
             rndMessages: ['Si','No','Ok','Forse','Non lo so','Ahahahhah','Per me è meglio di no'],
             selectContact: 0,
             messageText: '',
+            searchContactText: '',
         }
     },
 
@@ -201,11 +204,38 @@ createApp({
 
             setTimeout(() => {
                 this.contacts[this.selectContact].messages.push(responseMessage);                
-            }, 1000)
+            }, 1500)
         },
 
-        rndMessage(){
+        ultimateMessage(){
+            this.contacts.messages[messages.length - 1].message;
+        },
 
+        searchContact(){
+            this.contacts.forEach((contact) => {
+                if(contact.name.toLowerCase().includes(this.searchContactText.toLowerCase())){
+                    contact.visible = true;
+                } else{
+                    contact.visible = false;
+                }
+            })
+
+            console.log(this.searchContact());
+        },
+
+        onSelectEmoji(emoji) {
+            console.log(emoji)
+            this.messageText += emoji.i;
+            /*
+              // result
+              { 
+                  i: "😚", 
+                  n: ["kissing face"], 
+                  r: "1f61a", // with skin tone
+                  t: "neutral", // skin tone
+                  u: "1f61a" // without tone
+              }
+              */
         },
     }
 }).mount('#app');
