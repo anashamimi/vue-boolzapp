@@ -218,7 +218,12 @@ createApp({
         },
 
         lastMessage(index){            
-            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0, 30) + '...';
+            
+        },
+
+        lastDate(index){            
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
             
         },
 
