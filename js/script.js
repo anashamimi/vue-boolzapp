@@ -207,10 +207,6 @@ createApp({
             }, 1500)
         },
 
-        ultimateMessage(){
-            this.contacts.messages[messages.length - 1].message;
-        },
-
         searchContact(){
             this.contacts.forEach((contact) => {
                 if(contact.name.toLowerCase().includes(this.searchContactText.toLowerCase())){
@@ -219,8 +215,11 @@ createApp({
                     contact.visible = false;
                 }
             })
+        },
 
-            console.log(this.searchContact());
+        lastMessage(index){            
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+            
         },
 
         onSelectEmoji(emoji) {

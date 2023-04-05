@@ -50,24 +50,25 @@
         </div>
         <div class="search d-flex">
           <input type="text" class="form-control-sm m-1 w-100" id="userSearch" name="userSearch"
-            placeholder="Cerca o inizia una nuova chat"
-            v-model='searchContactText' @keyup="searchContact()">
+            placeholder="Cerca o inizia una nuova chat" v-model="searchContactText" @keyup="searchContact">
         </div>
 
         <div class="chat-friends">
-          <div div class="friend p-2 d-flex justify-content-between" v-for="(contact, index) in contacts"
-            @click="selectContact = index" :class="{'selected': index === selectContact}"
-            v-show="contact.visible">
+          <div v-for="(contact, index) in contacts" :key="contact.id" @click="selectContact = index"
+            :class="{'selected': index === selectContact}" v-show="contact.visible" :class="{'d-flex': contact.visible}">
 
-            <div class="d-flex justify-content-center align-items-center gap-2">
-              <img :src="contact.avatar" :alt="contact.name">
-              <div>
-                <span class="fw-medium">{{contact.name}}</span>
-                <p class="ah-small text-secondary">{{contact.message}}</p>
+            <div class="d-flex justify-content-between friend p-2">
+              <div class="d-flex justify-content-center align-items-center gap-2">
+                <img :src="contact.avatar" :alt="contact.name">
+                <div>
+                  <span class="fw-medium">{{contact.name}}</span>
+                  <p class="ah-small text-secondary">{{lastMessage(index)}}</p>
+                </div>
+
               </div>
-
+              <span class="ah-small text-secondary">Ieri</span>
             </div>
-            <span class="ah-small text-secondary">Ieri</span>
+
 
           </div>
         </div>
